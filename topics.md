@@ -1,0 +1,5 @@
+- React State
+- Controlled Components
+- Proportional Allocation Logic
+- Reduce Func
+- Array/Object Manipulation 

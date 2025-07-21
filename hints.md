@@ -1,0 +1,5 @@
+- Use an object to store the allocation for each resource (e.g., { cpu, gpu, memory, otherservices }).
+- When a slider changes, if the total would exceed the budget, reduce the other sliders proportionally to their current values.
+- Use a flat, modern UI with no border-radius and clear color accents for each slider.
+- Use React state and controlled components for all inputs.
+- Reset all allocations to zero if the total budget changes. 
