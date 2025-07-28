@@ -9,7 +9,7 @@ const resourceList = [
 
 const setSliderBackground = () => {};
 
-const COLORS = ["#4F8EF7", "#F76C5E", "#43D9AD", "#F7C948"];
+const COLORS = ["#93C2FF", "#D3C2FF", "#DCB7BC", "#FBDB86"];
 
 export default function BudgetPopup() {
   const [maxLimit, setMaxLimit] = useState(100);
@@ -111,8 +111,10 @@ export default function BudgetPopup() {
           fontWeight: 700,
           fontSize: 22,
           letterSpacing: 0.5,
-          color: "#F5F6FA"
-        }}>Allot your budget and divide it later</h2>
+          color: "#F5F6FA",
+          justifyContent: "center",
+          display: "flex"
+        }}>Allot your budget and divide it</h2>
         <div style={{ marginTop: 18, display: "flex", alignItems: "center", gap: 18 }}>
           <label style={{ flex: 1, fontWeight: 500, color: "#B5B8C5" }}>
             Total Budget
@@ -122,7 +124,8 @@ export default function BudgetPopup() {
               value={maxLimit}
               onChange={e => setMaxLimit(Number(e.target.value) || 1)}
               style={{
-                marginLeft: 10,
+                marginLeft: 2,
+                marginTop: 3,
                 width: 90,
                 background: "#23272F",
                 color: "#F5F6FA",
@@ -133,9 +136,9 @@ export default function BudgetPopup() {
                 borderRadius: 0,
               }}
             />
-            <span style={{ marginLeft: 8, color: "#F7C948", fontWeight: 700 }}>USD</span>
+            <span style={{ marginLeft: 10, color: "#FBDB86", fontWeight: 700 }}>USD</span>
           </label>
-          <div style={{ flex: 1, textAlign: "right", color: remaining === 0 ? "#F76C5E" : "#43D9AD", fontWeight: 600 }}>
+          <div style={{ flex: 1, textAlign: "right",marginTop: 15, color: remaining === 0 ? "#e28179ff" : "#43bd98ff", fontWeight: 600 }}>
             {remaining === 0
               ? "All budget allotted"
               : `Remaining: ${remaining} USD`}
@@ -174,7 +177,7 @@ export default function BudgetPopup() {
             />
           </div>
         ))}
-        <div style={{ display: "flex", justifyContent: "flex-end", gap: 16, marginTop: 32 }}>
+        <div style={{ display: "flex", justifyContent: "center", gap: 16, marginTop: 32 }}>
           <button style={{
             background: "#23272F",
             color: "#F5F6FA",
@@ -187,7 +190,7 @@ export default function BudgetPopup() {
             transition: "background 0.2s, color 0.2s",
           }}>Cancel</button>
           <button style={{
-            background: "#F7C948",
+            background: "#FBDB86",
             color: "#23272F",
             border: "none",
             padding: "10px 32px",
