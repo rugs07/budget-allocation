@@ -4,7 +4,7 @@ const resourceList = [
   { key: "cpu", label: "CPU" },
   { key: "gpu", label: "GPU" },
   { key: "memory", label: "Memory" },
-  { key: "otherservices", label: "Other Services" },
+  { key: "other", label: "Other" },
 ];
 
 const setSliderBackground = () => {};
@@ -17,7 +17,7 @@ export default function BudgetPopup() {
     cpu: { value: 0, price: 0 },
     gpu: { value: 0, price: 0 },
     memory: { value: 0, price: 0 },
-    otherservices: { value: 0, price: 0 },
+    other: { value: 0, price: 0 },
   });
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function BudgetPopup() {
       cpu: { value: 0, price: 0 },
       gpu: { value: 0, price: 0 },
       memory: { value: 0, price: 0 },
-      otherservices: { value: 0, price: 0 },
+      other: { value: 0, price: 0 },
     });
   }, [maxLimit]);
 
