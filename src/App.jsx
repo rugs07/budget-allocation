@@ -1,6 +1,5 @@
 import React from "react";
-// import BudgetPopup from "./BudgetPopupTemplate"; // Uncomment to use template
-import BudgetPopup from "./BudgetPopup"; // Solution
+import BudgetPopup from "./BudgetPopup";
 
 function App() {
   return (
