@@ -146,3 +146,11 @@ describe('BudgetPopup Component', () => {
 4. **Error Handling**: Add proper validation for budget input and edge cases
 5. **Accessibility**: Ensure proper ARIA labels and keyboard navigation
 6. **Testing**: Write comprehensive tests for all user interactions and edge cases 
+- You can use SweetAlert2 (Swal) for showing popup messages. Example:
+  ```js
+  Swal.fire({
+    title: 'Hello!',
+    text: 'This is a popup.',
+    icon: 'info'
+  });
+  ``` 

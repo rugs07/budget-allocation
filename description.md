@@ -47,5 +47,16 @@ Build a visually appealing budget allocation popup for a cloud platform. The pop
 - Mock SweetAlert2 for testing popup dialogs
 - Test edge cases and error scenarios
 
+---
+
 **Note:**
+For popup messages, you can use the [SweetAlert2 (Swal)](https://sweetalert2.github.io/) library, which is already included in this environment.
+Example usage:
+```js
+Swal.fire({
+  title: 'Hello!',
+  text: 'This is a popup.',
+  icon: 'info'
+});
+```
 To attempt the solution, comment out the solution component import in `App.jsx` and uncomment the template component import. Implement your solution in the template file as instructed.
