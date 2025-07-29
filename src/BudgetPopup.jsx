@@ -115,24 +115,19 @@ export default function BudgetPopup() {
   };
 
   const handleAllotNow = () => {
-    const totalAllocated = Object.values(pricingData).reduce((sum, item) => sum + item.value, 0);
-    
-    if (totalAllocated === 0) {
-      Swal.fire({
-        title: 'No Budget',
-        text: 'Please allocate some budget.',
-        icon: 'warning',
-        confirmButtonColor: '#FBDB86'
-      });
-      return;
-    }
-
     Swal.fire({
       title: 'Success!',
       text: 'Budget allocated successfully.',
       icon: 'success',
       confirmButtonColor: '#FBDB86'
     });
+    setPricingData({
+      cpu: { value: 0, price: 0 },
+      gpu: { value: 0, price: 0 },
+      memory: { value: 0, price: 0 },
+      other: { value: 0, price: 0 },
+    });
+    setMaxLimit(100);
   };
 
   return (
