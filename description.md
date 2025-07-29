@@ -1,5 +1,14 @@
 ## Proportional Budget Allocation Popup (React)
 
+## UI and Initial State Requirements
+1. The popup must render with the title: "Allot your budget and divide it" (data-testid: popup-title).
+2. There must be an input with the label "Total Budget" (data-testid: budget-label).
+3. The initial value of the total budget must be 100 (data-testid: budget-input).
+4. The initial values for CPU, GPU, Memory, and Other must be 0 (data-testid: resource-value-cpu, resource-value-gpu, resource-value-memory, resource-value-other).
+5. The initial remaining budget must display 'Remaining: 100 USD' (data-testid: remaining-budget).
+6. The resource labels must be 'CPU', 'GPU', 'Memory', and 'Other', with data-testid attributes 'resource-label-cpu', 'resource-label-gpu', 'resource-label-memory', and 'resource-label-other'.
+7. If the user enters an invalid or non-numeric value in the total budget input, the value should default to 1 USD (data-testid: budget-input).
+
 Build a visually appealing budget allocation popup for a cloud platform. The popup allows users to set a total budget and allocate it across four resources: CPU, GPU, Memory, and Other Services. Each resource is controlled by a slider with a modern, flat UI (no rounded corners).
 
 **Requirements:**
