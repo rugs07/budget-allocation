@@ -32,7 +32,7 @@ export default function BudgetPopup() {
   }, [maxLimit]);
 
   const totalUsed = Object.values(pricingData).reduce((sum, item) => sum + item.value, 0);
-  const remaining = maxLimit - totalUsed;
+  const remaining = Math.max(0, maxLimit - totalUsed);
 
   const handleSliderBudgetChange = (e) => {
     const newValue = Number(e.target.value);
@@ -200,6 +200,11 @@ export default function BudgetPopup() {
             />
           </div>
         ))}
+        {/* {totalUsed > maxLimit && (
+          <div className="error-message" style={{ color: 'red', marginBottom: '1em', textAlign: 'center' }}>
+            Allocation exceeds total budget!
+          </div>
+        )} */}
         <div className="button-container">
           <button 
             className="cancel-button"
@@ -212,7 +217,7 @@ export default function BudgetPopup() {
             className="allot-button"
             onClick={handleAllotNow}
             data-testid="allot-button"
-            disabled={totalUsed === 0}
+            disabled={totalUsed === 0 || totalUsed > maxLimit}
           >
             Allot Now
           </button>
