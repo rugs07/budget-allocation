@@ -30,10 +30,10 @@
 ### State Management
 ```javascript
 const [pricingData, setPricingData] = useState({
-  cpu: { value: 0, price: 0 },
-  gpu: { value: 0, price: 0 },
-  memory: { value: 0, price: 0 },
-  other: { value: 0, price: 0 },
+  cpu: { value: 0 },
+  gpu: { value: 0 },
+  memory: { value: 0 },
+  other: { value: 0 },
 });
 ```
 
@@ -52,7 +52,7 @@ const handleSliderBudgetChange = (e) => {
     // Update normally
     setPricingData((prev) => ({
       ...prev,
-      [currentName]: { value: newValue, price: newValue * 10 }
+      [currentName]: { value: newValue }
     }));
     return;
   }
@@ -82,10 +82,10 @@ const handleCancel = () => {
     if (result.isConfirmed) {
       // Reset all allocations
       setPricingData({
-        cpu: { value: 0, price: 0 },
-        gpu: { value: 0, price: 0 },
-        memory: { value: 0, price: 0 },
-        other: { value: 0, price: 0 },
+        cpu: { value: 0 },
+        gpu: { value: 0 },
+        memory: { value: 0 },
+        other: { value: 0 },
       });
     }
   });
@@ -154,3 +154,15 @@ describe('BudgetPopup Component', () => {
     icon: 'info'
   });
   ``` 
+
+### CSS Classes
+
+Your component should use the following CSS class names for key elements. These are checked in the tests:
+
+```js
+expect(screen.getByTestId('budget-popup')).toHaveClass('budget-popup-container');
+expect(screen.getByTestId('popup-title')).toHaveClass('budget-popup-title');
+expect(screen.getByTestId('budget-input')).toHaveClass('budget-input');
+expect(screen.getByTestId('cancel-button')).toHaveClass('cancel-button');
+expect(screen.getByTestId('allot-button')).toHaveClass('allot-button');
+``` 

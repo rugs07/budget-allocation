@@ -13,10 +13,10 @@ const COLORS = ["#93C2FF", "#D3C2FF", "#DCB7BC", "#FBDB86"];
 export default function BudgetPopupTemplate() {
   const [maxLimit, setMaxLimit] = useState(100);
   const [pricingData, setPricingData] = useState({
-    cpu: { value: 0, price: 0 },
-    gpu: { value: 0, price: 0 },
-    memory: { value: 0, price: 0 },
-    other: { value: 0, price: 0 },
+    cpu: { value: 0 },
+    gpu: { value: 0 },
+    memory: { value: 0 },
+    other: { value: 0 },
   });
 
   const totalUsed = Object.values(pricingData).reduce((sum, item) => sum + item.value, 0);

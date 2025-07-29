@@ -16,18 +16,18 @@ const COLORS = ["#93C2FF", "#D3C2FF", "#DCB7BC", "#FBDB86"];
 export default function BudgetPopup() {
   const [maxLimit, setMaxLimit] = useState(100);
   const [pricingData, setPricingData] = useState({
-    cpu: { value: 0, price: 0 },
-    gpu: { value: 0, price: 0 },
-    memory: { value: 0, price: 0 },
-    other: { value: 0, price: 0 },
+    cpu: { value: 0 },
+    gpu: { value: 0 },
+    memory: { value: 0 },
+    other: { value: 0 },
   });
 
   useEffect(() => {
     setPricingData({
-      cpu: { value: 0, price: 0 },
-      gpu: { value: 0, price: 0 },
-      memory: { value: 0, price: 0 },
-      other: { value: 0, price: 0 },
+      cpu: { value: 0 },
+      gpu: { value: 0 },
+      memory: { value: 0 },
+      other: { value: 0 },
     });
   }, [maxLimit]);
 
@@ -49,7 +49,6 @@ export default function BudgetPopup() {
         [currentName]: {
           ...prev[currentName],
           value: newValue,
-          price: newValue * 10,
         },
       }));
       return;
@@ -73,14 +72,12 @@ export default function BudgetPopup() {
       updatedData[key] = {
         ...updatedData[key],
         value: Math.max(0, currentVal - reduction),
-        price: Math.max(0, (currentVal - reduction) * 10),
       };
     });
 
     updatedData[currentName] = {
       ...updatedData[currentName],
       value: newValue,
-      price: newValue * 10,
     };
 
     setPricingData(updatedData);
@@ -99,10 +96,10 @@ export default function BudgetPopup() {
     }).then((result) => {
       if (result.isConfirmed) {
         setPricingData({
-          cpu: { value: 0, price: 0 },
-          gpu: { value: 0, price: 0 },
-          memory: { value: 0, price: 0 },
-          other: { value: 0, price: 0 },
+          cpu: { value: 0 },
+          gpu: { value: 0 },
+          memory: { value: 0 },
+          other: { value: 0 },
         });
         setMaxLimit(100);
         Swal.fire(
@@ -122,10 +119,10 @@ export default function BudgetPopup() {
       confirmButtonColor: '#FBDB86'
     });
     setPricingData({
-      cpu: { value: 0, price: 0 },
-      gpu: { value: 0, price: 0 },
-      memory: { value: 0, price: 0 },
-      other: { value: 0, price: 0 },
+      cpu: { value: 0 },
+      gpu: { value: 0 },
+      memory: { value: 0 },
+      other: { value: 0 },
     });
     setMaxLimit(100);
   };
