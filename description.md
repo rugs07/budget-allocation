@@ -8,6 +8,7 @@
 5. The initial remaining budget must display 'Remaining: 100 USD' (data-testid: remaining-budget).
 6. The resource labels must be 'CPU', 'GPU', 'Memory', and 'Other', with data-testid attributes 'resource-label-cpu', 'resource-label-gpu', 'resource-label-memory', and 'resource-label-other'.
 7. If the user enters an invalid or non-numeric value in the total budget input, the value should default to 1 USD (data-testid: budget-input).
+8. The remaining budget display (data-testid: remaining-budget) must have the class 'positive' when the remaining budget is greater than 0, and the class 'zero' when the remaining budget is 0.
 
 Build a visually appealing budget allocation popup for a cloud platform. The popup allows users to set a total budget and allocate it across four resources: CPU, GPU, Memory, and Other Services. Each resource is controlled by a slider with a modern, flat UI (no rounded corners).
 
